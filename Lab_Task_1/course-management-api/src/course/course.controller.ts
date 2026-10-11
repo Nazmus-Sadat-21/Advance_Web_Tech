@@ -1,4 +1,4 @@
-import { Controller, Delete, Get, Patch, Post, Put } from '@nestjs/common';
+import { Controller, Delete, Get, Param, Patch, Post, Put } from '@nestjs/common';
 import { CourseService } from './course.service.js';
 
 
@@ -12,8 +12,8 @@ export class CourseController {
   }
 
   @Get(":id")
-  getCourseById(){
-    return "Get Course By ID"
+  getCourseById(@Param("id") param:string){
+    return `Get Course By ID ${param}`
   }
 
   @Post()
@@ -22,18 +22,18 @@ export class CourseController {
   }
 
   @Put(":id")
-  updateCourse(){
-    return "Update Full Course"
+  updateCourse(@Param("id") param:string){
+    return `ID: ${param} Updated Full Course`
   }
 
   @Patch(":id")
-  patchCourse(){
-    return "Update partial course"
+  patchCourse(@Param("id") param:string){
+    return `ID: ${param} updated partial course`
   }
 
   @Delete(":id")
-  deleteCourse(){
-    return "Delete course"
+  deleteCourse(@Param("id") param:string){
+    return `ID: ${param} course deleted`
   }
 
 }
