@@ -8,32 +8,32 @@ export class CourseController {
 
   @Get()
   getAllcourse(){
-    return "Get all courses"
+    return this.courseService.getAllcourse()
   }
 
   @Get(":id")
   getCourseById(@Param("id") param:string){
-    return `Get Course By ID ${param}`
+    return this.courseService.getCourseById(param)
   }
 
   @Post()
   createCourse(){
-    return "Create new course"
+    return this.courseService.createCourse()
   }
 
   @Put(":id")
   updateCourse(@Param("id") param:string){
-    return `ID: ${param} Updated Full Course`
+    return this.courseService.updateCourse(param)
   }
 
   @Patch(":id")
   patchCourse(@Param("id") param:string){
-    return `ID: ${param} updated partial course`
+    return this.courseService.patchCourse(param)
   }
 
   @Delete(":id")
   deleteCourse(@Param("id") param:string){
-    return `ID: ${param} course deleted`
+    return this.courseService.deleteCourse(param)
   }
 
 }
