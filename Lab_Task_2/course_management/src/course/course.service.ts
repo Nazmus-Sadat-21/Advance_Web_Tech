@@ -1,5 +1,4 @@
 import { Injectable } from '@nestjs/common';
-import { Express } from 'express';
 import 'multer';
 import { CreateCourse } from './dto/create-course.dto.js';
 import { UpdateCourse } from './dto/update-course.dto.js';
